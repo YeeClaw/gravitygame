@@ -6,7 +6,7 @@ without any kind of thrusters or boosters. You need to leverage exisitng means o
 I designed this to test a proof of concept for a larger project that I'm working on. The original inspiration is in 2D, but I'm
 designing this in "3D" so that you can switch from top-down to isometric perspectives which will be useful for my bigger game.
 
-[Video walk-through](http://youtube.link.goes.here)
+[Video walk-through](https://youtu.be/SKU6Otxt2sU)
 
 # Development Environment
 
