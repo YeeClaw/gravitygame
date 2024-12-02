@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://brgs56fwbqqrl"]
+[gd_scene load_steps=8 format=3 uid="uid://brgs56fwbqqrl"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_xje8w"]
+[ext_resource type="Script" path="res://StateMachine.gd" id="2_pmby7"]
+[ext_resource type="Script" path="res://floating.gd" id="3_0evvi"]
+[ext_resource type="Script" path="res://grabbing_wall.gd" id="4_6g4pv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8xm5"]
 
@@ -18,3 +21,16 @@ shape = SubResource("BoxShape3D_n8xm5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_7wf5q")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_pmby7")
+initial_state = NodePath("Floating")
+
+[node name="Floating" type="Node" parent="StateMachine"]
+script = ExtResource("3_0evvi")
+
+[node name="GrabbingWall" type="Node" parent="StateMachine"]
+script = ExtResource("4_6g4pv")
+
+[connection signal="Transitioned" from="StateMachine/Floating" to="StateMachine" method="on_child_transition"]
+[connection signal="Transitioned" from="StateMachine/GrabbingWall" to="StateMachine" method="on_child_transition"]
