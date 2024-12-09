@@ -25,9 +25,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 1,
 [node name="Character" parent="." instance=ExtResource("1_irrt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
-
 [node name="StaticObstacle" parent="." instance=ExtResource("3_qteww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91426, 1, 5.68151)
 

@@ -12,6 +12,14 @@ func _ready() -> void:
 	print(velocity)
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	collision = move_and_slide()
-	
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("toggle_perspective"):
+		var current_camera: Camera3D = get_viewport().get_camera_3d()
+		if current_camera == $TopCamera:
+			$IsoCamera.make_current()
+		else:
+			$TopCamera.make_current()

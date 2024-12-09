@@ -32,5 +32,8 @@ script = ExtResource("3_0evvi")
 [node name="GrabbingWall" type="Node" parent="StateMachine"]
 script = ExtResource("4_6g4pv")
 
-[connection signal="Transitioned" from="StateMachine/Floating" to="StateMachine" method="on_child_transition"]
-[connection signal="Transitioned" from="StateMachine/GrabbingWall" to="StateMachine" method="on_child_transition"]
+[node name="TopCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="IsoCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.1, 7.1)

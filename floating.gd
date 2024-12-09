@@ -39,8 +39,6 @@ func update_velocity() -> void:
 		character.velocity += z_thrust
 	
 
-
 func check_new_state():
-	if character.collision:
+	if character.collision and Input.is_action_just_pressed("actor_release"):
 		Transitioned.emit(self, "GrabbingWall")
-	

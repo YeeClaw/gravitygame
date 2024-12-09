@@ -1,7 +1,7 @@
 extends Node
 class_name State # State names should always be in present tense
 
-signal Transitioned
+signal Transitioned # Is it possible to make an abstract warning? lol
 
 func Enter():
 	pass
@@ -17,6 +17,12 @@ func Update(_delta: float):
 
 func Physics_Update(_delta: float):
 	pass
+
+
+func check_new_state() -> void:
+	Transitioned.emit()
+	push_error("Implement method `check_new_state()`")
+
 
 static func switch_parent(child: Node2D, new_parent: Node2D) -> void:
 	"""
