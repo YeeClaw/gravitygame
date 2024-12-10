@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://brgs56fwbqqrl"]
 
-[ext_resource type="Script" path="res://character.gd" id="1_xje8w"]
-[ext_resource type="Script" path="res://StateMachine.gd" id="2_pmby7"]
-[ext_resource type="Script" path="res://floating.gd" id="3_0evvi"]
-[ext_resource type="Script" path="res://grabbing_wall.gd" id="4_6g4pv"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_xje8w"]
+[ext_resource type="Script" path="res://scripts/nodes/StateMachine.gd" id="2_pmby7"]
+[ext_resource type="Script" path="res://scripts/states/floating.gd" id="3_0evvi"]
+[ext_resource type="Script" path="res://scripts/states/grabbing_wall.gd" id="4_6g4pv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8xm5"]
 
