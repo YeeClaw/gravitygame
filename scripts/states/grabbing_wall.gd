@@ -13,6 +13,7 @@ func Enter():
 	print("Grabbing a wall!")
 	
 	character.velocity = Vector3(0, 0, 0)
+	character.direction_indicator.show()
 	
 	
 func Physics_Update(_delta: float):
@@ -29,3 +30,8 @@ func check_new_state() -> void:
 	if Input.is_action_just_pressed("actor_release"):
 		character.velocity = Vector3(direction.x * character.SPEED, 0, direction.z * character.SPEED)
 		Transitioned.emit(self, "Floating")
+
+
+func Exit() -> void:
+	#Hides the direction indicator
+	character.direction_indicator.hide()

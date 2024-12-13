@@ -4,13 +4,15 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var collision: bool = false
+var direction_indicator: Node3D
 
 
 func _ready() -> void:
 	var rng := RandomNumberGenerator.new()
 	velocity = Vector3(rng.randi_range(-5, 5), 0, rng.randi_range(-5, 5))
-	print(velocity)
-	
+	direction_indicator = $DirectionIndicator
+	direction_indicator.hide()
+
 
 func _physics_process(_delta: float) -> void:
 	collision = move_and_slide()
