@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://brgs56fwbqqrl"]
+[gd_scene load_steps=10 format=3 uid="uid://brgs56fwbqqrl"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_xje8w"]
 [ext_resource type="Script" path="res://scripts/nodes/StateMachine.gd" id="2_pmby7"]
 [ext_resource type="Script" path="res://scripts/states/floating.gd" id="3_0evvi"]
 [ext_resource type="Script" path="res://scripts/states/grabbing_wall.gd" id="4_6g4pv"]
 [ext_resource type="PackedScene" uid="uid://c1llnrlyyi0kq" path="res://scenes/direction_indicator.tscn" id="5_crudb"]
+[ext_resource type="Script" path="res://scripts/direction_indicator.gd" id="6_83ek6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8xm5"]
 
@@ -40,3 +41,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10,
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.1, 7.1)
 
 [node name="DirectionIndicator" parent="." instance=ExtResource("5_crudb")]
+script = ExtResource("6_83ek6")
