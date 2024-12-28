@@ -5,6 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var collision: bool = false
 var direction_indicator: Node3D
+@export var player_plane: Plane
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	player_plane = Plane(Vector3(0, 1, 0), position.y)
 	collision = move_and_slide()
 
 
