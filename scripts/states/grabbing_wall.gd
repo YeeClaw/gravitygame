@@ -18,7 +18,9 @@ func Enter():
 	
 func Physics_Update(_delta: float):
 	input_dir = Input.get_vector("actor_left", "actor_right", "actor_up", "actor_down")
-	direction = (character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction_angle = character.get_node("TopCamera").physical_mouse_pos
+	direction = Vector3(1, 0, 0).rotated(Vector3(1, 0, 0), direction_angle)
+	#(character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	check_new_state()
 	
