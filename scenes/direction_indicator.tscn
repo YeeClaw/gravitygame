@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1llnrlyyi0kq"]
 
-[ext_resource type="PackedScene" uid="uid://bg2bmcefbv0lc" path="res://art/models/red_arrow.gltf" id="1_rtfsr"]
+[ext_resource type="PackedScene" uid="uid://0hoiw5hp5k6p" path="res://art/models/red_arrow.gltf" id="1_rtfsr"]
 
 [node name="DirectionIndicator" type="Node3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

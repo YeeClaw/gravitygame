@@ -5,6 +5,7 @@ var character: CharacterBody3D
 
 var input_dir: Vector2
 var direction: Vector3
+var launch_speed: float
 
 
 func Enter():
@@ -18,10 +19,13 @@ func Enter():
 	
 func Physics_Update(_delta: float):
 	input_dir = Input.get_vector("actor_left", "actor_right", "actor_up", "actor_down")
-	var direction_angle = character.get_node("TopCamera").physical_mouse_pos
-	direction = Vector3(1, 0, 0).rotated(Vector3(1, 0, 0), direction_angle)
-	#(character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	var mouse_pos = character.get_node("TopCamera").physical_mouse_pos
+	var relative_pos = mouse_pos - character.global_position
+	relative_pos.y = 0
+	direction = relative_pos.normalized()
+	launch_speed = clampf(relative_pos.length(), 0.0, character.SPEED)
+
 	check_new_state()
 	
 
@@ -30,7 +34,7 @@ func check_new_state() -> void:
 	#print(Input.is_action_just_pressed("actor_release"))
 	
 	if Input.is_action_just_pressed("actor_release"):
-		character.velocity = Vector3(direction.x * character.SPEED, 0, direction.z * character.SPEED)
+		character.velocity = Vector3(direction.x * launch_speed, 0, direction.z * launch_speed)
 		Transitioned.emit(self, "Floating")
 
 

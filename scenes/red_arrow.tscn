@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://ce5kfif5hxd8p"]
 
-[ext_resource type="PackedScene" uid="uid://bg2bmcefbv0lc" path="res://art/models/red_arrow.gltf" id="1_lving"]
+[ext_resource type="PackedScene" uid="uid://0hoiw5hp5k6p" path="res://art/models/red_arrow.gltf" id="1_lving"]
 
 [node name="red_arrow" instance=ExtResource("1_lving")]
